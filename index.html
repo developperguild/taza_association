@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمعية تازة لتجارة والصناعة والخدمات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       
+        :root {
+            --primary-color: #032139; 
+            --secondary-color: #020b13;
+            --accent-color: #02090e;
+            --dark-color: #031025;
+            --light-color: #f8fafc;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --gray-color: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+       
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.4rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-color);
+        }
+
+        .text-primary { color: var(--primary-color); }
+        .text-center { text-align: center; }
+
+      
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #1a76d2);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+      
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-color);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo-text .sub {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-top: -3px;
+        }
+
+        .logo-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .logos-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-item {
+            height: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-item img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background: rgba(13, 91, 156, 0.1);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .notification {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--danger-color);
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(13, 91, 156, 0.9), rgba(26, 118, 210, 0.9)), 
+                        url('https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 200px 0 120px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+       
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #1a76d2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+      
+        .gallery {
+            padding: 100px 0;
+            background: var(--light-color);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+       
+        .posts {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .posts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .post-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .post-category {
+            background: rgba(13, 91, 156, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+      
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            left: -450px;
+            width: 420px;
+            height: 100vh;
+            background: white;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-panel.active {
+            left: 0;
+        }
+
+        .admin-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+            display: none;
+            backdrop-filter: blur(3px);
+        }
+
+        .admin-overlay.active {
+            display: block;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, var(--dark-color), #0f172a);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 10px;
+            gap: 5px;
+        }
+
+        .admin-tab {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .admin-tab.active {
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .admin-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .admin-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(13, 91, 156, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            background: #f1f5f9;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .file-input {
+            position: relative;
+        }
+
+        .file-input input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .file-label:hover {
+            border-color: var(--primary-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-top: 5px;
+        }
+
+       
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .login-box {
+            background: white;
+            width: 90%;
+            max-width: 450px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalIn 0.4s ease;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, var(--primary-color), #1a76d2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        .login-footer {
+            padding: 20px 30px;
+            background: #f8fafc;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .password-toggle {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-color);
+        }
+
+      
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+      
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+      
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .posts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .logos-container {
+                gap: 15px;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo-text .main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text .sub {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-panel {
+                width: 100%;
+                left: -100%;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+         
+            .logos-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex: 1;
+            }
+            
+            .logo-item {
+                height: 35px;
+                flex-shrink: 0;
+            }
+            
+            .logo-item img {
+                height: 35px;
+                width: auto;
+            }
+            
+            .logo-main {
+                font-size: 1.2rem;
+                gap: 8px;
+                flex-shrink: 0;
+            }
+            
+            .logo-text {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .logo-text .main {
+                font-size: 1.1rem;
+                white-space: nowrap;
+            }
+            
+            .logo-text .sub {
+                font-size: 0.7rem;
+                white-space: nowrap;
+                display: block;
+            }
+            
+            .logo-icon {
+                font-size: 1.5rem;
+            }
+            
+            .nav-actions {
+                gap: 10px;
+            }
+            
+            .btn-sm {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+          
+            .logos-container {
+                gap: 5px;
+            }
+            
+            .logo-item {
+                height: 30px;
+            }
+            
+            .logo-item img {
+                height: 30px;
+                max-width: 60px;
+            }
+            
+            .logo-text .main {
+                font-size: 1rem;
+            }
+            
+            .logo-text .sub {
+                font-size: 0.6rem;
+                display: none; 
+            }
+            
+            .logo-icon {
+                font-size: 1.2rem;
+            }
+            
+            .nav-actions {
+                flex-wrap: nowrap;
+            }
+            
+            .notification {
+                padding: 5px;
+            }
+            
+            .notification-badge {
+                width: 15px;
+                height: 15px;
+                font-size: 0.6rem;
+            }
+            
+           
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .post-content {
+                padding: 20px;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .hero-stats .stat-number {
+                font-size: 2rem;
+            }
+            
+            .hero-stats .stat-label {
+                font-size: 0.9rem;
+            }
+        }
+
+      
+        @media (max-width: 600px) {
+            .logo-text .sub {
+                display: none;
+            }
+            
+            .logo-main {
+                min-width: auto;
+            }
+            
+            .nav-container {
+                padding: 12px 0;
+            }
+            
+            
+            .logo-item:first-child,
+            .logo-item:last-child {
+                display: none; 
+            }
+        }
+
+      
+        @media (max-width: 768px) and (orientation: landscape) {
+            .nav-links {
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+        }
+
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--dark-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast.success {
+            background: var(--success-color);
+        }
+
+        .toast.error {
+            background: var(--danger-color);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalIn 0.3s ease;
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginModal" class="login-modal hidden">
+        <div class="login-box">
+            <div class="login-header">
+                <h3>تسجيل الدخول</h3>
+                <p>لوحة تحكم جمعية تازة</p>
+            </div>
+            <div class="login-body">
+                <div class="form-group">
+                    <label for="loginUsername">اسم المستخدم</label>
+                    <input type="text" id="loginUsername" class="form-control" placeholder="أدخل اسم المستخدم">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">كلمة المرور</label>
+                    <div style="position: relative;">
+                        <input type="password" id="loginPassword" class="form-control" placeholder="أدخل كلمة المرور">
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword')">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="rememberMe">
+                        تذكرني
+                    </label>
+                </div>
+                <button onclick="handleLogin()" class="btn btn-primary" style="width: 100%;">
+                    <span id="loginBtnText">تسجيل الدخول</span>
+                    <span id="loginLoading" class="loading hidden"></span>
+                </button>
+            </div>
+            <div class="login-footer">
+              <!-- <small>بيانات الدخول الافتراضية: admin / admin123</small>--> 
+            </div>
+        </div>
+    </div>
+
+  
+    <div id="adminOverlay" class="admin-overlay" onclick="closeAdminPanel()"></div>
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <div>
+                <h3 style="color: white; margin: 0;">لوحة التحكم</h3>
+                <p style="opacity: 0.8; margin: 5px 0 0;">جمعية تازة</p>
+            </div>
+            <button onclick="closeAdminPanel()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="admin-tabs">
+            <button class="admin-tab active" onclick="switchAdminTab('dashboard')">
+                <i class="fas fa-chart-bar"></i> الإحصائيات
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('posts')">
+                <i class="fas fa-newspaper"></i> المنشورات
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('gallery')">
+                <i class="fas fa-images"></i> المعرض
+            </button>
+            <button class="admin-tab" onclick="switchAdminTab('settings')">
+                <i class="fas fa-cog"></i> الإعدادات
+            </button>
+        </div>
+        
+        <div class="admin-content">
+          
+            <div id="dashboardTab" class="admin-tab-content">
+                <div class="admin-section">
+                    <h4><i class="fas fa-chart-line"></i> نظرة عامة</h4>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalPosts">0</div>
+                            <div class="stat-label">إجمالي المنشورات</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalImages">0</div>
+                            <div class="stat-label">إجمالي الصور</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="activeUsers">0</div>
+                            <div class="stat-label">زيارات اليوم</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="storageUsed">0%</div>
+                            <div class="stat-label">المساحة المستخدمة</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h4><i class="fas fa-history"></i> النشاط الأخير</h4>
+                    <div id="activityLog"></div>
+                </div>
+            </div>
+            
+         
+            <div id="postsTab" class="admin-tab-content hidden">
+                <div class="admin-section">
+                    <h4><i class="fas fa-plus"></i> إنشاء منشور جديد</h4>
+                    <div class="form-group">
+                        <label>عنوان المنشور</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="أدخل عنوان المنشور">
+                    </div>
+                    <div class="form-group">
+                        <label>محتوى المنشور</label>
+                        <textarea id="postContent" class="form-control" rows="6" placeholder="أدخل محتوى المنشور"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>فئة المنشور</label>
+                            <select id="postCategory" class="form-control">
+                                <option value="أخبار">أخبار</option>
+                                <option value="فعاليات">فعاليات</option>
+                                <option value="إعلانات">إعلانات</option>
+                                <option value="تكوين">تكوين</option>
+                                <option value="ورشات عمل">ورشات عمل</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>صورة المنشور</label>
+                            <div class="file-input">
+                                <input type="file" id="postImageUpload" accept="image/*">
+                                <label for="postImageUpload" class="file-label">
+                                    <i class="fas fa-upload"></i>
+                                    <span>اختر صورة</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-preview hidden" id="postImagePreview"></div>
+                    <button onclick="createPost()" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> نشر المنشور
+                    </button>
+                </div>
+                
+                <div class="admin-section">
+                    <h4><i class="fas fa-list"></i> إدارة المنشورات</h4>
+                    <div id="postsList"></div>
+                </div>
+            </div>
+            
+          
+            <div id="galleryTab" class="admin-tab-content hidden">
+                <div class="admin-section">
+                    <h4><i class="fas fa-upload"></i> رفع صورة جديدة</h4>
+                    <div class="form-group">
+                        <label>عنوان الصورة</label>
+                        <input type="text" id="imageTitle" class="form-control" placeholder="أدخل عنوان الصورة">
+                    </div>
+                    <div class="form-group">
+                        <label>وصف الصورة</label>
+                        <textarea id="imageDescription" class="form-control" rows="3" placeholder="أدخل وصف الصورة"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>فئة الصورة</label>
+                        <select id="imageCategory" class="form-control">
+                            <option value="all">جميع الفئات</option>
+                            <option value="فعاليات">فعاليات</option>
+                            <option value="ورشات عمل">ورشات عمل</option>
+                            <option value="اجتماعات">اجتماعات</option>
+                            <option value="أنشطة">أنشطة</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>رفع الصورة</label>
+                        <div class="file-input">
+                            <input type="file" id="imageUpload" accept="image/*">
+                            <label for="imageUpload" class="file-label">
+                                <i class="fas fa-upload"></i>
+                                <span>اختر صورة</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="image-preview hidden" id="imagePreview"></div>
+                    <button onclick="uploadImage()" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-upload"></i> رفع الصورة
+                    </button>
+                </div>
+                
+                <div class="admin-section">
+                    <h4><i class="fas fa-images"></i> معرض الصور</h4>
+                    <div id="galleryManager"></div>
+                </div>
+            </div>
+            
+           
+            <div id="settingsTab" class="admin-tab-content hidden">
+                <div class="admin-section">
+                    <h4><i class="fas fa-user-cog"></i> إعدادات الحساب</h4>
+                    <div class="form-group">
+                        <label>اسم المستخدم</label>
+                        <input type="text" class="form-control" value="admin" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور الجديدة</label>
+                        <input type="password" id="newPassword" class="form-control" placeholder="أدخل كلمة مرور جديدة">
+                    </div>
+                    <div class="form-group">
+                        <label>تأكيد كلمة المرور</label>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="أعد إدخال كلمة المرور">
+                    </div>
+                    <button onclick="changePassword()" class="btn btn-primary">
+                        <i class="fas fa-save"></i> حفظ التغييرات
+                    </button>
+                </div>
+                
+                <div class="admin-section">
+                    <h4><i class="fas fa-database"></i> إدارة البيانات</h4>
+                    <button onclick="exportData()" class="btn btn-outline" style="margin-bottom: 10px;">
+                        <i class="fas fa-download"></i> تصدير البيانات
+                    </button>
+                    <button onclick="importData()" class="btn btn-outline" style="margin-bottom: 10px;">
+                        <i class="fas fa-upload"></i> استيراد البيانات
+                    </button>
+                    <button onclick="clearAllData()" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> حذف جميع البيانات
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+  
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logos-container">
+                  
+                    <div class="logo-item">
+                     
+                        <img src="./pic1.jpeg" alt="شعار الجمعية 1" onerror="this.style.display='none'">
+                    </div>
+                    
+                
+                    <a href="#" class="logo-main">
+                        <i class="fas fa-handshake logo-icon"></i>
+                        <div class="logo-text">
+                            <span class="main">جمعية تازة</span>
+                            <span class="sub">لتجارة والصناعة والخدمات</span>
+                        </div>
+                    </a>
+                    
+                  
+                    <div class="logo-item">
+                       
+                        <img src="./pic2.jpeg" alt="شعار الجمعية 2" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">عن الجمعية</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#gallery">المعرض</a></li>
+                    <li><a href="#posts">الأخبار</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="notification" onclick="showNotifications()">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="showLoginModal()">
+                        <i class="fas fa-sign-in-alt"></i> لوحة التحكم
+                    </button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>جمعية تازة لتجارة والصناعة والخدمات</h1>
+            <p class="hero-subtitle">نحو مستقبل اقتصادي مزدهر في مدينة تازة، نعمل معًا لتمثيل مصالح المقاولين وتنمية بيئة الأعمال المحلية.</p>
+            <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> انضم إلينا الآن
+            </a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">عضو نشط</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">ورشة عمل</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">سنة من العطاء</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">رضا العملاء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="about" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>عن جمعية تازة</h2>
+                <p class="section-subtitle">تأسست جمعية تازة لتجارة والصناعة والخدمات سنة 2012 كإطار تمثيلي يهدف إلى الدفاع عن مصالح المقاولين والمساهمة في التنمية الاقتصادية المحلية.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون الإطار المرجعي الأول للدفاع عن مصالح القطاع الخاص في جهة تازة، والعمل على خلق بيئة أعمال محفزة للاستثمار والإبداع.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>رسالتنا</h3>
+                    <p>تمثيل مصالح الأعضاء، تقديم الخدمات النوعية، وتشجيع التبادل والتعاون بين مختلف الفاعلين الاقتصاديين.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>أهدافنا</h3>
+                    <p>الدفاع عن مصالح الأعضاء، تحسين مناخ الأعمال، تنظيم التكوينات، تشجيع الاستثمار، وخلق فرص الشراكة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="services" class="services" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتنا المتكاملة</h2>
+                <p class="section-subtitle">نقدم مجموعة متنوعة من الخدمات المصممة خصيصًا لتلبية احتياجات أعضائنا وتعزيز نشاطهم التجاري والصناعي.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>التمثيل والمصالح</h3>
+                    <p>تمثيل الأعضاء أمام الجهات الرسمية والدفاع عن مصالح القطاع التجاري والصناعي والخدماتي.</p>
+                    <a href="#" class="read-more">المزيد <i class="fas fa-arrow-left"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>التكوين والاستشارة</h3>
+                    <p>برامج تكوينية متخصصة واستشارات مهنية في الإدارة والتسويق والجودة والتطوير.</p>
+                    <a href="#" class="read-more">المزيد <i class="fas fa-arrow-left"></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>التشبيك والشراكات</h3>
+                    <p>خلق فرص التعاون وعقد الشراكات بين الأعضاء وتسهيل الوصول إلى الأسواق الجديدة.</p>
+                    <a href="#" class="read-more">المزيد <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>معرض الصور والفعاليات</h2>
+                <p class="section-subtitle">توثيق لأنشطة وفعاليات جمعية تازة على مدار السنوات الماضية.</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="فعاليات">الفعاليات</button>
+                <button class="filter-btn" data-filter="ورشات عمل">ورشات العمل</button>
+                <button class="filter-btn" data-filter="اجتماعات">الاجتماعات</button>
+                <button class="filter-btn" data-filter="أنشطة">الأنشطة</button>
+            </div>
+            
+            <div id="galleryContainer" class="gallery-grid">
+            
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="posts" class="posts">
+        <div class="container">
+            <div class="posts-header">
+                <div>
+                    <h2>آخر الأخبار والمنشورات</h2>
+                    <p class="section-subtitle">تابع أحدث أخبار وأنشطة الجمعية</p>
+                </div>
+                <button class="btn btn-outline" onclick="loadMorePosts()">
+                    <i class="fas fa-redo"></i> تحميل المزيد
+                </button>
+            </div>
+            
+            <div id="postsContainer" class="posts-grid">
+            
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="contact" class="services" style="background: var(--light-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>اتصل بنا</h2>
+                <p class="section-subtitle">نحن هنا للإجابة على استفساراتك ومساعدتك في كل ما تحتاجه</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>عنواننا</h3>
+                    <p>مدينة تازة</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>اتصل بنا</h3>
+                    <p>+212 6 34 17 89 25</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>tazaassociation7@gmail.com<br>Yahyaelhassan66@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-handshake"></i>
+                        جمعية تازة
+                    </div>
+                    <p>جمعية تازة لتجارة والصناعة والخدمات هي إطار تمثيلي يهدف إلى الدفاع عن مصالح المقاولين والمساهمة في التنمية الاقتصادية المحلية.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">عن الجمعية</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#gallery">المعرض</a></li>
+                        <li><a href="#posts">الأخبار</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>الخدمات</h3>
+                    <ul>
+                        <li><a href="#">التمثيل التجاري</a></li>
+                        <li><a href="#">التكوين والاستشارة</a></li>
+                        <li><a href="#">التشبيك والشراكات</a></li>
+                        <li><a href="#">الدفاع عن المصالح</a></li>
+                        <li><a href="#">تطوير الأعمال</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>الإثنين - الجمعة: 8:30 - 17:30</li>
+                        <li>السبت: 9:00 - 13:00</li>
+                        <li>الأحد: مغلق</li>
+                    </ul>
+                    <p style="margin-top: 20px;">اشترك في نشرتنا الإخبارية:</p>
+                    <div style="display: flex; margin-top: 10px;">
+                        <input type="email" placeholder="بريدك الإلكتروني" style="flex: 1; padding: 10px; border: none; border-radius: var(--radius) 0 0 var(--radius);">
+                        <button style="background: var(--primary-color); color: white; border: none; padding: 0 15px; border-radius: 0 var(--radius) var(--radius) 0; cursor: pointer;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear">2024</span> جمعية تازة لتجارة والصناعة والخدمات. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div id="toast" class="toast hidden"></div>
+
+    <script>
+       
+        const SYSTEM_DATA = {
+            posts: [],
+            images: [],
+            users: [],
+            settings: {
+                siteTitle: "جمعية تازة",
+                adminUsername: "admin",
+                adminPassword: "admin123",
+                siteDescription: "جمعية تازة لتجارة والصناعة والخدمات",
+                contactEmail: "tazaassociation7@gmail.com",
+                contactPhone: "+212 634-178925"
+            },
+            stats: {
+                totalVisits: 0,
+                todayVisits: 0,
+                lastVisit: null
+            }
+        };
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the system
+            initSystem();
+            
+            // Load data from localStorage
+            loadData();
+            
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize event listeners
+            initEventListeners();
+            
+            // Load initial content
+            loadGallery();
+            loadPosts();
+            
+            // Update statistics
+            updateStats();
+            
+            // Set up image upload previews
+            setupImagePreviews();
+            
+            // اختبار دالة القائمة المتنقلة
+            testMobileMenu();
+        });
+
+        function testMobileMenu() {
+            console.log("تم تحميل الموقع بنجاح");
+            console.log("زر القائمة المتنقلة:", document.querySelector('.mobile-menu-btn'));
+            console.log("القائمة المتنقلة:", document.querySelector('.nav-links'));
+        }
+
+        // ===== SYSTEM FUNCTIONS =====
+        
+        function initSystem() {
+            // Check for first visit
+            if(!localStorage.getItem('system_initialized')) {
+                // Load sample data
+                loadSampleData();
+                localStorage.setItem('system_initialized', 'true');
+            }
+        }
+        
+        function loadSampleData() {
+            // Sample posts
+            SYSTEM_DATA.posts = [
+                {
+                    id: 1,
+                    title: "ورشة عمل حول آفاق التصدير",
+                    content: "نظمت الجمعية ورشة عمل متخصصة حول آليات وآفاق التصدير نحو الأسواق الإفريقية بحضور أكثر من 50 مقاولًا ومهتمًا بمجال التصدير.",
+                    category: "ورشات عمل",
+                    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    date: "15 مايو 2024",
+                    views: 145,
+                    likes: 32
+                },
+                {
+                    id: 2,
+                    title: "لقاء تشاوري مع وزارة الصناعة",
+                    content: "عقد مكتب الجمعية لقاء تشاوريا مع ممثلي وزارة الصناعة والتجارة والاقتصاد الأخضر لمناقشة التحديات التي يواجهها القطاع الصناعي في الجهة.",
+                    category: "اجتماعات",
+                    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    date: "2 مايو 2024",
+                    views: 89,
+                    likes: 18
+                }
+            ];
+            
+            // Sample images
+            SYSTEM_DATA.images = [
+                {
+                    id: 1,
+                    title: "الورشة السنوية للتصدير",
+                    description: "ورشة عمل متخصصة حول التصدير نحو الأسواق الإفريقية",
+                    category: "ورشات عمل",
+                    url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    date: "15 مايو 2024"
+                },
+                {
+                    id: 2,
+                    title: "لقاء مع مسؤولين حكوميين",
+                    description: "اجتماع تشاوري مع ممثلي وزارة الصناعة",
+                    category: "اجتماعات",
+                    url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    date: "2 مايو 2024"
+                }
+            ];
+            
+            saveData();
+        }
+        
+        function loadData() {
+            const savedData = localStorage.getItem('taza_association_pro');
+            if(savedData) {
+                const parsedData = JSON.parse(savedData);
+                Object.assign(SYSTEM_DATA, parsedData);
+            }
+        }
+        
+        function saveData() {
+            localStorage.setItem('taza_association_pro', JSON.stringify(SYSTEM_DATA));
+            updateAdminStats();
+        }
+        
+        // ===== AUTHENTICATION =====
+        
+        function showLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+        
+        function hideLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+        
+        function handleLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            const loginBtnText = document.getElementById('loginBtnText');
+            const loginLoading = document.getElementById('loginLoading');
+            
+            // Show loading
+            loginBtnText.classList.add('hidden');
+            loginLoading.classList.remove('hidden');
+            
+            // Simulate API call
+            setTimeout(() => {
+                if(username === SYSTEM_DATA.settings.adminUsername && password === SYSTEM_DATA.settings.adminPassword) {
+                    // Successful login
+                    showToast('تم تسجيل الدخول بنجاح!', 'success');
+                    hideLoginModal();
+                    
+                    // Save login state if remember me is checked
+                    if(rememberMe) {
+                        localStorage.setItem('admin_logged_in', 'true');
+                    }
+                    
+                    // Open admin panel
+                    openAdminPanel();
+                } else {
+                    // Failed login
+                    showToast('اسم المستخدم أو كلمة المرور غير صحيحة', 'error');
+                }
+                
+                // Hide loading
+                loginBtnText.classList.remove('hidden');
+                loginLoading.classList.add('hidden');
+            }, 1500);
+        }
+        
+        // ===== ADMIN PANEL =====
+        
+        function openAdminPanel() {
+            document.getElementById('adminPanel').classList.add('active');
+            document.getElementById('adminOverlay').classList.add('active');
+            updateAdminStats();
+            loadAdminPosts();
+            loadAdminGallery();
+        }
+        
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('active');
+            document.getElementById('adminOverlay').classList.remove('active');
+        }
+        
+        function switchAdminTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.admin-tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').classList.remove('hidden');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function updateAdminStats() {
+            document.getElementById('totalPosts').textContent = SYSTEM_DATA.posts.length;
+            document.getElementById('totalImages').textContent = SYSTEM_DATA.images.length;
+            document.getElementById('activeUsers').textContent = SYSTEM_DATA.stats.todayVisits || 0;
+            
+            // Calculate storage usage
+            const dataSize = JSON.stringify(SYSTEM_DATA).length;
+            const maxSize = 5 * 1024 * 1024; // 5MB
+            const usagePercent = Math.min(100, Math.round((dataSize / maxSize) * 100));
+            document.getElementById('storageUsed').textContent = usagePercent + '%';
+            
+            // Update activity log
+            updateActivityLog();
+        }
+        
+        function updateActivityLog() {
+            const container = document.getElementById('activityLog');
+            const activities = [
+                { action: 'منشور جديد', details: 'ورشة عمل حول التصدير', time: 'منذ ساعتين' },
+                { action: 'صورة مرفوعة', details: 'الورشة السنوية', time: 'منذ 4 ساعات' },
+                { action: 'تسجيل دخول', details: 'من الجهاز الرئيسي', time: 'منذ يوم' }
+            ];
+            
+            let html = '';
+            activities.forEach(activity => {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e2e8f0;">
+                        <div>
+                            <strong>${activity.action}</strong>
+                            <p style="margin: 5px 0 0; color: var(--gray-color); font-size: 0.9rem;">${activity.details}</p>
+                        </div>
+                        <span style="color: var(--gray-color); font-size: 0.9rem;">${activity.time}</span>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // ===== POSTS MANAGEMENT =====
+        
+        function createPost() {
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            const category = document.getElementById('postCategory').value;
+            const imageFile = document.getElementById('postImageUpload').files[0];
+            
+            if(!title || !content) {
+                showToast('الرجاء ملء جميع الحقول المطلوبة', 'error');
+                return;
+            }
+            
+            const newPost = {
+                id: Date.now(),
+                title: title,
+                content: content,
+                category: category,
+                date: new Date().toLocaleDateString('ar-EG', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                }),
+                views: 0,
+                likes: 0
+            };
+            
+            // Handle image upload
+            if(imageFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    newPost.image = e.target.result;
+                    SYSTEM_DATA.posts.unshift(newPost);
+                    saveData();
+                    loadPosts();
+                    loadAdminPosts();
+                    showToast('تم نشر المنشور بنجاح!', 'success');
+                    clearPostForm();
+                };
+                reader.readAsDataURL(imageFile);
+            } else {
+               
+                newPost.image = 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                SYSTEM_DATA.posts.unshift(newPost);
+                saveData();
+                loadPosts();
+                loadAdminPosts();
+                showToast('تم نشر المنشور بنجاح!', 'success');
+                clearPostForm();
+            }
+        }
+        
+        function loadAdminPosts() {
+            const container = document.getElementById('postsList');
+            
+            if(SYSTEM_DATA.posts.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--gray-color); padding: 20px;">لا توجد منشورات بعد</p>';
+                return;
+            }
+            
+            let html = '';
+            SYSTEM_DATA.posts.slice(0, 10).forEach(post => {
+                html += `
+                    <div style="border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 15px; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="flex: 1;">
+                                <h5 style="margin: 0 0 10px;">${post.title}</h5>
+                                <p style="margin: 0; color: var(--gray-color); font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${post.content}</p>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <span style="background: rgba(13, 91, 156, 0.1); color: var(--primary-color); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem;">${post.category}</span>
+                                    <span style="color: var(--gray-color); font-size: 0.8rem;">${post.date}</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 5px;">
+                                <button onclick="editPost(${post.id})" style="background: none; border: 1px solid var(--primary-color); color: var(--primary-color); width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button onclick="deletePost(${post.id})" style="background: none; border: 1px solid var(--danger-color); color: var(--danger-color); width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function deletePost(postId) {
+            if(confirm('هل أنت متأكد من حذف هذا المنشور؟')) {
+                SYSTEM_DATA.posts = SYSTEM_DATA.posts.filter(post => post.id !== postId);
+                saveData();
+                loadPosts();
+                loadAdminPosts();
+                showToast('تم حذف المنشور بنجاح', 'success');
+            }
+        }
+        
+        function editPost(postId) {
+            const post = SYSTEM_DATA.posts.find(p => p.id === postId);
+            if(post) {
+               
+                document.getElementById('postTitle').value = post.title;
+                document.getElementById('postContent').value = post.content;
+                document.getElementById('postCategory').value = post.category;
+                
+               
+                switchAdminTab('posts');
+                
+                showToast('يمكنك تعديل المنشور الآن', 'success');
+            }
+        }
+        
+        function clearPostForm() {
+            document.getElementById('postTitle').value = '';
+            document.getElementById('postContent').value = '';
+            document.getElementById('postCategory').value = 'أخبار';
+            document.getElementById('postImageUpload').value = '';
+            document.getElementById('postImagePreview').innerHTML = '';
+            document.getElementById('postImagePreview').classList.add('hidden');
+        }
+        
+       
+        
+        function uploadImage() {
+            const title = document.getElementById('imageTitle').value;
+            const description = document.getElementById('imageDescription').value;
+            const category = document.getElementById('imageCategory').value;
+            const imageFile = document.getElementById('imageUpload').files[0];
+            
+            if(!title || !imageFile) {
+                showToast('الرجاء إدخال عنوان الصورة واختيار صورة', 'error');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const newImage = {
+                    id: Date.now(),
+                    title: title,
+                    description: description,
+                    category: category,
+                    url: e.target.result,
+                    date: new Date().toLocaleDateString('ar-EG', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })
+                };
+                
+                SYSTEM_DATA.images.unshift(newImage);
+                saveData();
+                loadGallery();
+                loadAdminGallery();
+                showToast('تم رفع الصورة بنجاح!', 'success');
+                clearImageForm();
+            };
+            
+            reader.readAsDataURL(imageFile);
+        }
+        
+        function loadAdminGallery() {
+            const container = document.getElementById('galleryManager');
+            
+            if(SYSTEM_DATA.images.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--gray-color); padding: 20px;">لا توجد صور بعد</p>';
+                return;
+            }
+            
+            let html = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">';
+            SYSTEM_DATA.images.slice(0, 12).forEach(image => {
+                html += `
+                    <div style="position: relative;">
+                        <img src="${image.url}" style="width: 100%; height: 120px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="position: absolute; top: 5px; right: 5px; display: flex; gap: 5px;">
+                            <button onclick="deleteImage(${image.id})" style="background: rgba(239, 68, 68, 0.9); color: white; border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-size: 0.7rem;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div style="padding: 10px; background: white; border-radius: 0 0 var(--radius) var(--radius);">
+                            <p style="margin: 0; font-size: 0.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${image.title}</p>
+                            <p style="margin: 5px 0 0; font-size: 0.7rem; color: var(--gray-color);">${image.category}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+        
+        function deleteImage(imageId) {
+            if(confirm('هل أنت متأكد من حذف هذه الصورة؟')) {
+                SYSTEM_DATA.images = SYSTEM_DATA.images.filter(img => img.id !== imageId);
+                saveData();
+                loadGallery();
+                loadAdminGallery();
+                showToast('تم حذف الصورة بنجاح', 'success');
+            }
+        }
+        
+        function clearImageForm() {
+            document.getElementById('imageTitle').value = '';
+            document.getElementById('imageDescription').value = '';
+            document.getElementById('imageCategory').value = 'all';
+            document.getElementById('imageUpload').value = '';
+            document.getElementById('imagePreview').innerHTML = '';
+            document.getElementById('imagePreview').classList.add('hidden');
+        }
+        
+      
+        
+        function loadPosts() {
+            const container = document.getElementById('postsContainer');
+            
+            if(SYSTEM_DATA.posts.length === 0) {
+                container.innerHTML = `
+                    <div class="post-card">
+                        <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">أخبار</span>
+                                <span><i class="far fa-calendar"></i> 15 مايو 2024</span>
+                                <span><i class="far fa-eye"></i> 145</span>
+                            </div>
+                            <h3>لا توجد منشورات بعد</h3>
+                            <p>سيتم عرض المنشورات هنا عند إضافتها من لوحة التحكم</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            SYSTEM_DATA.posts.slice(0, 6).forEach(post => {
+                html += `
+                    <div class="post-card">
+                        <div class="post-image" style="background-image: url('${post.image}')"></div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-category">${post.category}</span>
+                                <span><i class="far fa-calendar"></i> ${post.date}</span>
+                                <span><i class="far fa-eye"></i> ${post.views}</span>
+                            </div>
+                            <h3>${post.title}</h3>
+                            <p>${post.content.substring(0, 150)}...</p>
+                            <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function loadGallery() {
+            const container = document.getElementById('galleryContainer');
+            
+            if(SYSTEM_DATA.images.length === 0) {
+                container.innerHTML = `
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="صورة افتراضية">
+                        <div class="gallery-overlay">
+                            <h4>صورة افتراضية</h4>
+                            <p>سيتم عرض الصور هنا عند رفعها</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            SYSTEM_DATA.images.slice(0, 9).forEach(image => {
+                html += `
+                    <div class="gallery-item" data-category="${image.category}">
+                        <img src="${image.url}" alt="${image.title}">
+                        <div class="gallery-overlay">
+                            <h4>${image.title}</h4>
+                            <p>${image.description}</p>
+                            <small>${image.date}</small>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            
+           
+            initGalleryFilters();
+        }
+        
+        function initGalleryFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                  
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                  
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                  
+                    galleryItems.forEach(item => {
+                        if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+        
+     
+        
+        function changePassword() {
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if(!newPassword || !confirmPassword) {
+                showToast('الرجاء ملء جميع الحقول', 'error');
+                return;
+            }
+            
+            if(newPassword !== confirmPassword) {
+                showToast('كلمات المرور غير متطابقة', 'error');
+                return;
+            }
+            
+            SYSTEM_DATA.settings.adminPassword = newPassword;
+            saveData();
+            
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            
+            showToast('تم تغيير كلمة المرور بنجاح', 'success');
+        }
+        
+        function exportData() {
+            const dataStr = JSON.stringify(SYSTEM_DATA, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'taza-association-backup.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+            
+            showToast('تم تصدير البيانات بنجاح', 'success');
+        }
+        
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        const importedData = JSON.parse(e.target.result);
+                        Object.assign(SYSTEM_DATA, importedData);
+                        saveData();
+                        
+                      
+                        loadPosts();
+                        loadGallery();
+                        updateAdminStats();
+                        loadAdminPosts();
+                        loadAdminGallery();
+                        
+                        showToast('تم استيراد البيانات بنجاح', 'success');
+                    } catch (error) {
+                        showToast('خطأ في ملف البيانات', 'error');
+                    }
+                };
+                
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        }
+        
+        function clearAllData() {
+            if(confirm('هل أنت متأكد؟ هذا الإجراء سيحذف جميع البيانات ولا يمكن التراجع عنه.')) {
+                localStorage.clear();
+                location.reload();
+            }
+        }
+        
+     
+        
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+        
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            const toggleBtn = event.currentTarget;
+            
+            if(input.type === 'password') {
+                input.type = 'text';
+                toggleBtn.innerHTML = '<i class="far fa-eye-slash"></i>';
+            } else {
+                input.type = 'password';
+                toggleBtn.innerHTML = '<i class="far fa-eye"></i>';
+            }
+        }
+        
+        function setupImagePreviews() {
+      
+            const postImageInput = document.getElementById('postImageUpload');
+            const postImagePreview = document.getElementById('postImagePreview');
+            
+            postImageInput.addEventListener('change', function() {
+                if(this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        postImagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                        postImagePreview.classList.remove('hidden');
+                    };
+                    
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+            
+           
+            const imageInput = document.getElementById('imageUpload');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            imageInput.addEventListener('change', function() {
+                if(this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+                        imagePreview.classList.remove('hidden');
+                    };
+                    
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        }
+        
+        function updateStats() {
+          
+            const today = new Date().toDateString();
+            if(SYSTEM_DATA.stats.lastVisit !== today) {
+                SYSTEM_DATA.stats.todayVisits = 0;
+                SYSTEM_DATA.stats.lastVisit = today;
+            }
+            SYSTEM_DATA.stats.todayVisits++;
+            SYSTEM_DATA.stats.totalVisits++;
+            saveData();
+        }
+        
+        function loadMorePosts() {
+            showToast('جاري تحميل المزيد من المنشورات...', 'success');
+          
+        }
+        
+        function showNotifications() {
+            showToast('لا توجد إشعارات جديدة', 'success');
+        }
+        
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn i');
+            
+        
+            navLinks.classList.toggle('active');
+            
+          
+            if (navLinks.classList.contains('active')) {
+                mobileMenuBtn.className = 'fas fa-times';
+                console.log("فتحت القائمة");
+            } else {
+                mobileMenuBtn.className = 'fas fa-bars';
+                console.log("أغلقت القائمة");
+            }
+        }
+        
+        function initEventListeners() {
+       
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn i');
+                    
+                
+                    if (window.innerWidth <= 768) {
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            mobileMenuBtn.className = 'fas fa-bars';
+                        }
+                    }
+                });
+            });
+            
+        
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                  
+                    if (this.target === '_blank') return;
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+        
+            document.addEventListener('keydown', function(e) {
+                if(e.key === 'Escape') {
+                    hideLoginModal();
+                    closeAdminPanel();
+                    
+                  
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn i');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.className = 'fas fa-bars';
+                    }
+                }
+            });
+            
+           
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-links a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if(scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+         
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768) {
+                    const navLinks = document.querySelector('.nav-links');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    const navLinksContainer = document.querySelector('.nav-links');
+                    
+                    if (navLinks.classList.contains('active') && 
+                        !navLinksContainer.contains(event.target) && 
+                        !mobileMenuBtn.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                    }
+                }
+            });
+            
+          
+            document.addEventListener('touchstart', function(e) {
+                
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+    </script>
+</body>
+</html>
